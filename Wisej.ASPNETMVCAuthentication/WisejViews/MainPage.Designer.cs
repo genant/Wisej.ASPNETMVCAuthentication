@@ -1,6 +1,6 @@
 ﻿namespace Wisej.ASPNETMVCAuthentication.WisejViews
 {
-	partial class Page1
+	partial class MainPage
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,9 +28,11 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.button1 = new Wisej.Web.Button();
             this.label1 = new Wisej.Web.Label();
             this.btnLogout = new Wisej.Web.LinkLabel();
+            this.javaScript1 = new Wisej.Web.JavaScript(this.components);
             this.SuspendLayout();
             // 
             // button1
@@ -56,7 +58,7 @@
             // 
             this.btnLogout.Anchor = ((Wisej.Web.AnchorStyles)((Wisej.Web.AnchorStyles.Top | Wisej.Web.AnchorStyles.Right)));
             this.btnLogout.AutoSize = true;
-            this.btnLogout.Location = new System.Drawing.Point(1402, 3);
+            this.btnLogout.Location = new System.Drawing.Point(-52, 3);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(49, 16);
             this.btnLogout.TabIndex = 2;
@@ -71,7 +73,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "Page1";
-            this.Size = new System.Drawing.Size(1454, 849);
             this.Load += new System.EventHandler(this.Page1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -83,5 +84,6 @@
 		private Web.Button button1;
 		private Web.Label label1;
         private Web.LinkLabel btnLogout;
+        private Web.JavaScript javaScript1;
     }
 }
