@@ -1,5 +1,6 @@
 ﻿using Wisej.ASPNETMVCAuthentication.WisejViews;
 using Wisej.Web;
+using System.Web;
 
 namespace Wisej.ASPNETMVCAuthentication {
     internal static class Program {
@@ -10,7 +11,7 @@ namespace Wisej.ASPNETMVCAuthentication {
             if (Application.IsAuthenticated) {
                 Application.MainPage = new MainPage();
             } else {
-                Application.Navigate("/Account/Login");
+                Application.Navigate(VirtualPathUtility.ToAbsolute("~/Account/Login"));
             }
         }
 

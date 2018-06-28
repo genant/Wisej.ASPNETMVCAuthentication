@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using Wisej.Web;
 using Wisej.Core;
-
+using System.Web;
 
 namespace Wisej.ASPNETMVCAuthentication.WisejViews {
     public partial class MainPage : Page
@@ -46,7 +46,7 @@ namespace Wisej.ASPNETMVCAuthentication.WisejViews {
                 name = this.User().GetUserName();
                 this.label1.Text = name;
             } else {
-                Application.Navigate("/Home/Index");
+                Application.Navigate(VirtualPathUtility.ToAbsolute("~/Home/Index"));
             }
         }
 
@@ -54,12 +54,12 @@ namespace Wisej.ASPNETMVCAuthentication.WisejViews {
             //Eval(@"var req = new qx.io.request.Xhr('/Account/SignOut');
             //       req.addListener('success', App.Page1.LogoutSuccess(), this);
             //       req.send();");
-            Eval("qx.datev.Account.logOff();");
+            Eval($"qx.datev.Account.logOff('{VirtualPathUtility.ToAbsolute("~/Account/SignOut")}');");
         }
 
         [WebMethod]
         public void LogoutSuccess() {
-            Application.Navigate("/Home/Index");
+            Application.Navigate(VirtualPathUtility.ToAbsolute("~/Home/Index"));
         }
     }
 }
